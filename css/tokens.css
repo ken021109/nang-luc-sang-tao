@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Design tokens — một hệ thống tối giản, lấy cảm hứng từ Apple
+   ========================================================================== */
+
+:root {
+  /* Surfaces */
+  --paper: #fbfbfa;
+  --paper-2: #f4f3ef;
+  --paper-3: #ecebe5;
+  --surface: #ffffff;
+  --surface-warm: #fff8f1;
+
+  /* Ink */
+  --ink: #171717;
+  --ink-soft: #343436;
+  --muted: #5f5f64;
+  --muted-2: #68686d;
+  --line: rgba(23, 23, 23, 0.1);
+  --line-strong: rgba(23, 23, 23, 0.16);
+
+  /* Accent — tia lửa */
+  --accent: #ff5a1f;
+  --accent-ink: #b83c12;
+  --accent-soft: #fff0e8;
+  --accent-line: rgba(255, 90, 31, 0.28);
+
+  /* Dark */
+  --dark: #0b0b0c;
+  --dark-2: #131315;
+  --dark-3: #1c1c1f;
+  --dark-text: #f5f5f7;
+  --dark-muted: #a1a1a6;
+  --dark-line: rgba(255, 255, 255, 0.12);
+
+  /* Radii */
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 18px;
+  --r-lg: 26px;
+  --r-xl: 36px;
+  --r-pill: 999px;
+
+  /* Elevation — bóng mềm, nhiều lớp như vật liệu */
+  --shadow-xs: 0 1px 2px rgba(23, 23, 23, 0.04);
+  --shadow-sm: 0 1px 2px rgba(23, 23, 23, 0.04), 0 8px 24px rgba(23, 23, 23, 0.045);
+  --shadow-md: 0 2px 4px rgba(23, 23, 23, 0.04), 0 18px 48px rgba(23, 23, 23, 0.075);
+  --shadow-lg: 0 4px 8px rgba(23, 23, 23, 0.05), 0 32px 80px rgba(23, 23, 23, 0.12);
+
+  /* Type */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+  --font-serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "DejaVu Sans Mono", monospace;
+
+  /* Motion — spring-ish curves, không bounce cho UI tĩnh */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur: 320ms;
+  --dur-slow: 620ms;
+
+  /* Layout */
+  --container: 1200px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --nav-offset: 96px;
+  --section-space: clamp(5rem, 9vw, 8.5rem);
+}
