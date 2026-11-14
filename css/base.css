@@ -465,6 +465,7 @@ footer[id] {
   .grain,
   .cursor-glow,
   .footer__top-link,
+  .share__copy,
   .segmented,
   .portrait-stage__veil,
   .portrait-stage__pin,
@@ -652,6 +653,18 @@ footer[id] {
   .footer__sources li,
   .footer__credits p {
     color: #000 !important;
+  }
+
+  .share {
+    border-color: #ccc !important;
+    break-inside: avoid;
+  }
+
+  .share__qr {
+    border: 1px solid #ccc !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    transform: none !important;
   }
 
   a {

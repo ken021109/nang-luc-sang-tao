@@ -253,6 +253,17 @@
     font-size: clamp(2rem, 7vw, 3.4rem);
   }
 
+  .share {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .share__qr {
+    justify-self: start;
+    width: 200px;
+    transform: none;
+  }
+
   .signals {
     grid-template-columns: 1fr;
   }
@@ -691,6 +702,24 @@
     line-height: 1.24;
   }
 
+  .share {
+    padding-top: 2.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .share__quote {
+    font-size: 1.35rem;
+    line-height: 1.3;
+  }
+
+  .share__actions {
+    align-items: flex-start;
+  }
+
+  .share__link {
+    font-size: 0.68rem;
+  }
+
   .footer__bottom {
     flex-direction: column;
     align-items: flex-start;
@@ -806,6 +835,14 @@
     line-height: 1.22;
   }
 
+  .share__qr {
+    width: 200px;
+  }
+
+  .share__quote {
+    font-size: 1.25rem;
+  }
+
   .footer__grid {
     gap: 1.75rem;
   }
@@ -825,6 +862,10 @@
 }
 
 @media (max-width: 380px) {
+  .share__quote {
+    font-size: 1.15rem;
+  }
+
   .nav-pill__brand {
     display: none;
   }

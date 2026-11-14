@@ -44,10 +44,12 @@ js/
   accordion.js             # 4 trạm: mở một trạm, tự đóng trạm trước
   portrait.js              # hé lộ / ghim chân dung tác giả
   glow.js                  # vệt sáng theo con trỏ trên card
+  share.js                 # sao chép link chia sẻ, có fallback
   app.js                   # năm ở footer, chi tiết nhỏ
 assets/
   fonts/                   # Inter + Newsreader, self-host, subset tiếng Việt
   spark.svg                # favicon
+  share-qr.svg             # QR trỏ tới trang đã deploy
 images/                    # ảnh tư liệu đã xử lý + poster video
 video/
   think-different.mp4      # bản đầy đủ H.264 + AAC (1:09), dùng cho dialog
@@ -73,8 +75,11 @@ video/
   lời bình (transcript) cho người dùng trình đọc màn hình.
 - **Con trỏ**: một quầng sáng cam chạy theo con trỏ (chỉ desktop có pointer
   chính xác, tự tắt khi reduced-motion).
+- **Chia sẻ**: cuối footer có QR, đường link công khai và nút sao chép. QR được
+  tạo cục bộ bằng `qrencode`; nút sao chép dùng Clipboard API, có fallback chọn
+  liên kết nếu trình duyệt chặn.
 - **In ấn**: `@media print` chuyển toàn bộ về nền trắng, mở hết accordion và
-  panel, giữ ảnh và nội dung đọc được.
+  panel, giữ ảnh, QR và nội dung đọc được.
 
 ## Kiểm tra
 
@@ -86,6 +91,7 @@ video/
 - `prefers-reduced-motion`: không tải/không phát video nền, không glare, reveal
   hiện ngay; `prefers-reduced-transparency` và `prefers-contrast` có override.
 - Chạy được cả `file://` và HTTP; 0 lỗi console.
+- QR đã quét thử và giải mã đúng `https://ken021109.github.io/nang-luc-sang-tao/`.
 
 ## Tư liệu & ảnh
 
