@@ -1092,6 +1092,7 @@
   background: #0b0b0d;
   color: var(--ink);
   box-shadow: 0 40px 120px rgba(0, 0, 0, 0.6);
+  max-height: 92vh;
   max-height: 92svh;
   overflow: auto;
 }

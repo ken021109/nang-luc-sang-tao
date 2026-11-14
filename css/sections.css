@@ -9,7 +9,9 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  min-height: max(760px, 100vh);
   min-height: max(760px, 100svh);
+  overflow: hidden;
   overflow: clip;
   background: #050506;
   isolation: isolate;

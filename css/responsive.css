@@ -307,6 +307,7 @@
   }
 
   .hero {
+    min-height: max(700px, 100vh);
     min-height: max(700px, 100svh);
   }
 
