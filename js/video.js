@@ -9,6 +9,8 @@
   var player = NLST.$('[data-video-player]');
   var openers = NLST.$$('[data-video-open]');
   var closers = NLST.$$('[data-video-close]');
+  var heroVideo = NLST.$('[data-hero-video]');
+  var resumeHero = false;
 
   if (!dialog || !player || !openers.length) return;
 
@@ -33,6 +35,11 @@
     }
 
     lockPage();
+
+    if (heroVideo && !heroVideo.paused) {
+      resumeHero = true;
+      heroVideo.pause();
+    }
 
     var playAttempt = player.play();
     if (playAttempt && typeof playAttempt.catch === 'function') {
@@ -71,6 +78,16 @@
       /* Metadata may not be ready yet. */
     }
     unlockPage();
+
+    if (heroVideo && resumeHero) {
+      var heroAttempt = heroVideo.play();
+      if (heroAttempt && typeof heroAttempt.catch === 'function') {
+        heroAttempt.catch(function () {
+          /* The hero keeps its poster if playback is blocked. */
+        });
+      }
+      resumeHero = false;
+    }
   });
 
   document.addEventListener('keydown', function (event) {

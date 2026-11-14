@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Năng lực sáng tạo — GS.TSKH Phan Đình Diệu | Ngữ văn 12</title>
   <meta name="description" content="Trang đọc tương tác văn bản “Năng lực sáng tạo” của GS.TSKH Phan Đình Diệu — Ngữ văn 12, Bài 3: Lập luận trong văn bản nghị luận.">
-  <meta name="theme-color" content="#fbfbfa">
+  <meta name="theme-color" content="#0a0a0b">
+  <meta name="color-scheme" content="dark">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Năng lực sáng tạo — GS.TSKH Phan Đình Diệu">
   <meta property="og:description" content="Bốn trạm giải mã một lập luận về năng lực riêng có của con người.">
-  <meta property="og:image" content="images/think-different-poster.jpg">
+  <meta property="og:image" content="images/hero-poster.jpg">
   <link rel="icon" href="assets/spark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
   <link rel="stylesheet" href="css/tokens.css">
@@ -22,11 +23,15 @@
 <body>
   <a class="skip-link" href="#main">Chuyển tới nội dung</a>
 
+  <div class="cursor-glow" data-cursor-glow aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
   <div class="scroll-progress" aria-hidden="true"><span data-scroll-progress></span></div>
 
   <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
     <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2.5v19M2.5 12h19M5.3 5.3l13.4 13.4M18.7 5.3 5.3 18.7"/></symbol>
     <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.2v13.6L19 12z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-volume" viewBox="0 0 24 24"><path d="M4 9.5v5h3.5L13 19V5L7.5 9.5H4zM17 9a4 4 0 0 1 0 6M19.5 6.5a7.5 7.5 0 0 1 0 11"/></symbol>
     <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
     <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 4v16M6 14l6 6 6-6"/></symbol>
     <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 20V4M6 10l6-6 6 6"/></symbol>
@@ -58,7 +63,7 @@
         <a href="#gia-tri" class="nav-link" data-nav="gia-tri"><span class="nav-link__num">03</span><span class="nav-link__label">Giá trị</span></a>
         <a href="#van-dung" class="nav-link" data-nav="van-dung"><span class="nav-link__num">04</span><span class="nav-link__label">Vận dụng</span></a>
       </div>
-      <button class="nav-pill__video" type="button" data-video-open aria-haspopup="dialog" aria-controls="video-dialog" aria-label="Xem video khởi động">
+      <button class="nav-pill__video" type="button" data-video-open aria-haspopup="dialog" aria-label="Xem video khởi động">
         <svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>
         <span>Video</span>
       </button>
@@ -68,51 +73,92 @@
   <main id="main">
     <!-- ============================== HERO ============================== -->
     <section id="mo-dau" class="hero" data-section>
-      <div class="hero__glow" aria-hidden="true"></div>
-      <div class="container hero__inner">
-        <p class="eyebrow hero__eyebrow">
-          <span class="eyebrow__dot" aria-hidden="true"></span>
-          Ngữ văn 12
-          <span class="eyebrow__sep" aria-hidden="true">•</span>
-          Bài 3: Lập luận trong văn bản nghị luận
-        </p>
-
-        <h1 class="hero__title">
-          <span class="hero__title-line">Năng lực</span>
-          <span class="hero__title-line hero__title-line--accent">sáng tạo<svg class="icon hero__spark" aria-hidden="true"><use href="#i-spark"></use></svg></span>
-        </h1>
-
-        <p class="hero__byline">
-          <span class="hero__byline-rule" aria-hidden="true"></span>
-          GS.TSKH Phan Đình Diệu
-        </p>
-
-        <p class="hero__lede">
-          Một văn bản nghị luận về thứ năng lực mà máy móc không thể thay thế —
-          và cách nó được nuôi dưỡng từ những điều bình dị nhất.
-        </p>
-
-        <div class="hero__actions">
-          <button class="btn btn--primary" type="button" data-video-open aria-haspopup="dialog" aria-controls="video-dialog">
-            <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg></span>
-            Xem video khởi động
-            <span class="btn__meta">1 phút</span>
-          </button>
-          <a class="btn btn--quiet" href="#tiep-can">
-            Đọc bài
-            <svg class="icon" aria-hidden="true"><use href="#i-arrow-down"></use></svg>
-          </a>
-        </div>
+      <div class="hero__media" data-hero-media aria-hidden="true">
+        <video
+          class="hero__video"
+          data-hero-video
+          data-src="video/think-different-loop.mp4"
+          data-src-mobile="video/think-different-loop-mobile.mp4"
+          poster="images/hero-poster.jpg"
+          muted
+          loop
+          playsinline
+          preload="none"></video>
+        <div class="hero__tint"></div>
+        <div class="hero__scrim"></div>
+        <div class="hero__vignette"></div>
       </div>
 
-      <div class="container hero__cards">
-        <div class="hero__hint">
-          <span class="hero__hint-label">Ba câu hỏi trước khi đọc</span>
-          <span class="hero__hint-action">Chạm để lật</span>
-          <span class="hero__hint-swipe" aria-hidden="true">Vuốt ngang <svg class="icon"><use href="#i-arrow-right"></use></svg></span>
+      <div class="hero__inner">
+        <div class="container hero__top">
+          <p class="eyebrow hero__eyebrow">
+            <span class="eyebrow__dot" aria-hidden="true"></span>
+            Ngữ văn 12
+            <span class="eyebrow__sep" aria-hidden="true">/</span>
+            Bài 3: Lập luận trong văn bản nghị luận
+          </p>
+          <p class="hero__edition">Hồ sơ đọc · 05 chương</p>
         </div>
 
-        <div class="flashcards" id="flashcards">
+        <div class="container hero__main">
+          <h1 class="hero__title">
+            <span class="hero__title-line">Năng lực</span>
+            <span class="hero__title-line hero__title-line--serif">sáng tạo<svg class="icon hero__spark" aria-hidden="true"><use href="#i-spark"></use></svg></span>
+          </h1>
+
+          <div class="hero__aside">
+            <p class="hero__byline">
+              <span class="hero__byline-rule" aria-hidden="true"></span>
+              GS.TSKH Phan Đình Diệu
+            </p>
+            <p class="hero__lede">
+              Một văn bản nghị luận về thứ năng lực mà máy móc không thể thay thế —
+              và cách nó được nuôi dưỡng từ những điều bình dị nhất.
+            </p>
+            <div class="hero__actions">
+              <button class="btn btn--primary" type="button" data-video-open aria-haspopup="dialog">
+                <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg></span>
+                Xem video đầy đủ
+                <span class="btn__meta">1:09</span>
+              </button>
+              <a class="btn btn--quiet" href="#tiep-can">
+                Bắt đầu đọc
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-down"></use></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="container hero__foot">
+          <div class="hero__source">
+            <p class="hero__source-label">Video nền</p>
+            <p>Apple — <em>Think Different</em> (1997), dùng cho mục đích học tập.</p>
+          </div>
+          <button class="hero__motion" type="button" data-hero-toggle aria-pressed="true">
+            <span class="hero__motion-icon" aria-hidden="true"><svg class="icon"><use href="#i-pause"></use></svg></span>
+            <span data-hero-toggle-label>Tạm dừng video nền</span>
+          </button>
+          <a class="hero__cue" href="#cau-hoi">
+            <span>Cuộn để đọc</span>
+            <span class="hero__cue-line" aria-hidden="true"></span>
+          </a>
+          <span class="hero__index" aria-hidden="true">00 — 05</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== BA CÂU HỎI ============================== -->
+    <section id="cau-hoi" class="questions" aria-labelledby="questions-title">
+      <div class="container">
+        <div class="questions__head" data-reveal>
+          <div>
+            <p class="eyebrow"><span class="eyebrow__num">?</span> Trước khi bước vào văn bản</p>
+            <h2 class="questions__title" id="questions-title">Ba câu hỏi <em>để mở màn</em></h2>
+          </div>
+          <p class="questions__hint">Chạm vào thẻ để lật <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></p>
+        </div>
+
+        <div class="flashcards" id="flashcards" data-reveal>
           <button class="flashcard" type="button" aria-expanded="false" aria-label="Kỷ nguyên AI: con người còn lại gì? Bấm để xem câu trả lời.">
             <span class="flashcard__inner">
               <span class="flashcard__face flashcard__face--front">
@@ -159,20 +205,21 @@
           </button>
         </div>
       </div>
-
-      <div class="hero__scroll" aria-hidden="true"><span></span></div>
     </section>
 
     <!-- ============================== I. TIẾP CẬN ============================== -->
     <section id="tiep-can" class="section section--approach" data-section>
       <div class="container">
-        <header class="section-head" data-reveal>
-          <p class="eyebrow"><span class="eyebrow__num">I</span> Đọc — Định hướng tiếp cận</p>
-          <h2 class="section-title">Một trí thức <em>đi trước thời đại</em></h2>
-          <p class="section-lede">
-            Ba huy hiệu, bốn cột mốc và một kệ sách đủ để thấy con đường
-            từ toán học đến ngành Tin học Việt Nam.
-          </p>
+        <header class="section-head section-head--split" data-reveal>
+          <p class="section-head__index" aria-hidden="true">I</p>
+          <div class="section-head__text">
+            <p class="eyebrow"><span class="eyebrow__num">01</span> Đọc — Định hướng tiếp cận</p>
+            <h2 class="section-title">Một trí thức <em>đi trước thời đại</em></h2>
+            <p class="section-lede">
+              Ba huy hiệu, bốn cột mốc và một kệ sách đủ để thấy con đường
+              từ toán học đến ngành Tin học Việt Nam.
+            </p>
+          </div>
         </header>
 
         <div class="tabs author-tabs" data-tabs data-reveal>
@@ -192,19 +239,27 @@
 
           <div class="tab-panel is-active" id="panel-tac-gia" role="tabpanel" aria-labelledby="tab-tac-gia" data-panel="tac-gia" tabindex="0">
             <div class="author-grid">
-              <figure class="portrait-card">
-                <div class="portrait-card__media">
-                  <img src="images/phan-dinh-dieu.jpg" alt="Chân dung GS.TSKH Phan Đình Diệu" width="720" height="720">
-                  <span class="portrait-card__spark" aria-hidden="true"><svg class="icon"><use href="#i-spark"></use></svg></span>
+              <figure class="portrait-stage" data-portrait-stage>
+                <div class="portrait-stage__frame">
+                  <img class="portrait-stage__img" id="portrait-img" src="images/phan-dinh-dieu.jpg" alt="Chân dung GS.TSKH Phan Đình Diệu" width="720" height="720">
+                  <div class="portrait-stage__veil" aria-hidden="true">
+                    <span class="portrait-stage__veil-label">Chân dung</span>
+                    <span class="portrait-stage__veil-hint">Rê chuột hoặc chạm để hiện</span>
+                  </div>
+                  <span class="portrait-stage__corner" aria-hidden="true">1936 — 2018</span>
+                  <button class="portrait-stage__pin" type="button" data-portrait-reveal aria-pressed="false">
+                    <svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg>
+                    <span data-portrait-label>Ghim chân dung</span>
+                  </button>
                 </div>
                 <figcaption>
-                  <span class="portrait-card__name">GS.TSKH Phan Đình Diệu</span>
-                  <span class="portrait-card__years">1936 — 2018</span>
-                  <span class="portrait-card__credit">Ảnh: Tia Sáng</span>
+                  <span class="portrait-stage__name">GS.TSKH Phan Đình Diệu</span>
+                  <span class="portrait-stage__years">1936 — 2018</span>
+                  <span class="portrait-stage__credit">Ảnh: Tia Sáng</span>
                 </figcaption>
               </figure>
 
-              <div class="author-body">
+              <div class="author-body" data-portrait-trigger>
                 <ul class="badges" aria-label="Huy hiệu định danh">
                   <li class="badge"><svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg>Can Lộc, Hà Tĩnh</li>
                   <li class="badge"><svg class="icon" aria-hidden="true"><use href="#i-grad"></use></svg>GS.TSKH Toán học &amp; Máy tính</li>
@@ -239,7 +294,7 @@
                 </div>
 
                 <figure class="archive-card">
-                  <img src="images/phan-dinh-dieu-lab.jpg" alt="Tư liệu phòng máy tính của Viện Khoa học tính toán và Điều khiển" width="1000" height="640">
+                  <img src="images/phan-dinh-dieu-lab.jpg" alt="Tư liệu phòng máy tính của Viện Khoa học tính toán và Điều khiển" width="1000" height="640" loading="lazy">
                   <figcaption>Phòng máy tính của Viện Khoa học tính toán &amp; Điều khiển, những năm 1970–1980 · Ảnh tư liệu: TTĐN</figcaption>
                 </figure>
               </div>
@@ -331,83 +386,91 @@
     <!-- ============================== II. ĐỌC HIỂU ============================== -->
     <section id="doc-hieu" class="section section--reading" data-section>
       <div class="container">
-        <header class="section-head" data-reveal>
-          <p class="eyebrow"><span class="eyebrow__num">II</span> Đọc hiểu văn bản</p>
-          <h2 class="section-title">Bốn trạm giải mã<br><em>một năng lực</em></h2>
-          <p class="section-lede">
-            Từ khái niệm đến phạm vi, từ bản chất đến chiến lược quốc gia — bốn luận điểm
-            móc xích nhau như bốn trạm năng lượng.
-          </p>
+        <header class="section-head section-head--split" data-reveal>
+          <p class="section-head__index" aria-hidden="true">II</p>
+          <div class="section-head__text">
+            <p class="eyebrow"><span class="eyebrow__num">02</span> Đọc hiểu văn bản</p>
+            <h2 class="section-title">Bốn trạm giải mã<br><em>một năng lực</em></h2>
+            <p class="section-lede">
+              Từ khái niệm đến phạm vi, từ bản chất đến chiến lược quốc gia — bốn luận điểm
+              móc xích nhau như bốn trạm năng lượng. Mở từng trạm, mỗi lần một trạm.
+            </p>
+          </div>
         </header>
 
-        <div class="stations-wrap">
-        <div class="station-rail" data-station-rail data-reveal>
-          <a href="#tram-1" class="station-rail__item is-active" data-station-link="1"><span class="station-rail__num">01</span><span class="station-rail__label">Khái niệm</span></a>
-          <a href="#tram-2" class="station-rail__item" data-station-link="2"><span class="station-rail__num">02</span><span class="station-rail__label">Phạm vi</span></a>
-          <a href="#tram-3" class="station-rail__item" data-station-link="3"><span class="station-rail__num">03</span><span class="station-rail__label">Bản chất</span></a>
-          <a href="#tram-4" class="station-rail__item" data-station-link="4"><span class="station-rail__num">04</span><span class="station-rail__label">Cộng năng</span></a>
-          <span class="station-rail__progress" aria-hidden="true"><span data-station-progress></span></span>
+        <div class="reading-bar" data-reveal>
+          <span class="reading-bar__label">Mục lục đọc hiểu</span>
+          <span class="reading-bar__status" data-accordion-status aria-live="polite">Đang mở trạm 01 / 04</span>
         </div>
 
-        <div class="stations">
+        <div class="station-accordion" data-accordion data-reveal>
           <!-- TRẠM 1 -->
-          <article class="station" id="tram-1" data-station="1">
-            <header class="station__head">
-              <span class="station__num">01</span>
-              <div>
-                <p class="station__kicker">Luận điểm 1</p>
-                <h3 class="station__title">Khái niệm &amp; cơ chế ý tưởng</h3>
-              </div>
-            </header>
-
-            <div class="station__grid">
-              <div class="station__block">
-                <p class="label">Từ khoá cốt lõi</p>
-                <p class="station__big">Hoạt động tinh thần<br>riêng có của con người</p>
-                <ul class="keyword-list">
-                  <li><span class="keyword-list__mark">→</span>Tạo ra cái mới có giá trị</li>
-                  <li><span class="keyword-list__mark">→</span>Tư duy độc lập + trí tưởng tượng</li>
-                </ul>
-                <div class="figure-pair">
-                  <figure class="mini-figure">
-                    <img src="images/einstein.jpg" alt="Chân dung Albert Einstein" width="560" height="760">
-                    <figcaption>A. Einstein</figcaption>
-                  </figure>
-                  <figure class="mini-figure">
-                    <img src="images/poincare.jpg" alt="Chân dung Henri Poincaré" width="420" height="560">
-                    <figcaption>H. Poincaré</figcaption>
-                  </figure>
-                </div>
-              </div>
-
-              <div class="station__block station__block--paper">
-                <p class="label">Trích dẫn / Công thức</p>
-                <p class="formula" aria-label="Thiên tài sáng tạo bằng ý thức đổi mới nhân với bình phương của tổng trí tưởng tượng và khả năng trừu tượng hoá">
-                  <span class="formula__term">Thiên tài sáng tạo</span>
-                  <span class="formula__op">=</span>
-                  <span class="formula__term">Ý thức đổi mới</span>
-                  <span class="formula__op">×</span>
-                  <span class="formula__group">(<span>Trí tưởng tượng</span> + <span>Trừu tượng hoá</span>)<sup>2</sup></span>
-                </p>
-                <p class="formula__source">F. Balibar, khi nói về thiên tài của A. Einstein</p>
-
-                <blockquote class="pullquote">
-                  <p>Ý tưởng như <em>“những ánh chớp”</em> — không xuất hiện khi <em>“trời yên biển lặng”</em>, chỉ bùng phát khi lao động cần mẫn tích tụ đủ <em>“gió mây giông bão trí tuệ”</em>.</p>
-                  <cite>H. Poincaré</cite>
-                </blockquote>
-              </div>
-            </div>
-
-            <div class="station__foot">
-              <button class="expand-btn" type="button" data-expand="mo-1" aria-expanded="false" aria-controls="mo-1">
-                <span class="expand-btn__icon" aria-hidden="true"><svg class="icon"><use href="#i-plus"></use></svg></span>
-                <span>Góc mở rộng</span>
-                <span class="expand-btn__hint">Giai thoại Poincaré</span>
+          <article class="station is-open" id="tram-1" data-station="1">
+            <h3 class="station__heading">
+              <button class="station__toggle" type="button" id="station-tab-1" data-accordion-toggle aria-expanded="true" aria-controls="station-panel-1">
+                <span class="station__num" aria-hidden="true">01</span>
+                <span class="station__label">
+                  <span class="station__kicker">Luận điểm 1</span>
+                  <span class="station__title">Khái niệm &amp; cơ chế ý tưởng</span>
+                </span>
+                <span class="station__teaser">Từ định nghĩa sáng tạo đến “ánh chớp” của Poincaré.</span>
+                <span class="station__icon" aria-hidden="true"><svg class="icon"><use href="#i-plus"></use></svg></span>
               </button>
-              <div class="expand" id="mo-1" data-expand-panel inert aria-hidden="true">
-                <div class="expand__inner">
-                  <p class="expand__label">Eureka trên xe buýt</p>
-                  <p>Tháng 6 năm 1880, Poincaré rời Caen đến Coutances. Vừa đặt chân lên bậc xe buýt, lời giải cho bài toán hàm Fuchsian bất chợt hiện ra — dù ông đã tạm gác toán học để đi nghỉ. Khoảnh khắc “Aha!” ấy không từ trên trời rơi xuống: nó được chuẩn bị bởi những ngày lao động căng thẳng trước đó. Đó chính là “ánh chớp” mà ông nói tới.</p>
+            </h3>
+
+            <div class="station__panel" id="station-panel-1" role="region" aria-labelledby="station-tab-1" data-accordion-panel>
+              <div class="station__panel-inner">
+                <div class="station__grid">
+                  <div class="station__block">
+                    <p class="label">Từ khoá cốt lõi</p>
+                    <p class="station__big">Hoạt động tinh thần<br>riêng có của con người</p>
+                    <ul class="keyword-list">
+                      <li><span class="keyword-list__mark">→</span>Tạo ra cái mới có giá trị</li>
+                      <li><span class="keyword-list__mark">→</span>Tư duy độc lập + trí tưởng tượng</li>
+                    </ul>
+                    <div class="figure-pair">
+                      <figure class="mini-figure" data-figure style="--d: 80ms">
+                        <img src="images/einstein.jpg" alt="Chân dung Albert Einstein" width="560" height="760">
+                        <figcaption><span>A. Einstein</span><small>1879 — 1955</small></figcaption>
+                      </figure>
+                      <figure class="mini-figure" data-figure style="--d: 170ms">
+                        <img src="images/poincare.jpg" alt="Chân dung Henri Poincaré" width="420" height="560">
+                        <figcaption><span>H. Poincaré</span><small>1854 — 1912</small></figcaption>
+                      </figure>
+                    </div>
+                  </div>
+
+                  <div class="station__block station__block--paper">
+                    <p class="label">Trích dẫn / Công thức</p>
+                    <p class="sr-only">Thiên tài sáng tạo bằng ý thức đổi mới nhân với bình phương của tổng trí tưởng tượng và khả năng trừu tượng hoá.</p>
+                    <p class="formula" aria-hidden="true">
+                      <span class="formula__term">Thiên tài sáng tạo</span>
+                      <span class="formula__op">=</span>
+                      <span class="formula__term">Ý thức đổi mới</span>
+                      <span class="formula__op">×</span>
+                      <span class="formula__group">(<span>Trí tưởng tượng</span> + <span>Trừu tượng hoá</span>)<sup>2</sup></span>
+                    </p>
+                    <p class="formula__source">F. Balibar, khi nói về thiên tài của A. Einstein</p>
+
+                    <blockquote class="pullquote">
+                      <p>Ý tưởng như <em>“những ánh chớp”</em> — không xuất hiện khi <em>“trời yên biển lặng”</em>, chỉ bùng phát khi lao động cần mẫn tích tụ đủ <em>“gió mây giông bão trí tuệ”</em>.</p>
+                      <cite>H. Poincaré</cite>
+                    </blockquote>
+                  </div>
+                </div>
+
+                <div class="station__foot">
+                  <button class="expand-btn" type="button" data-expand="mo-1" aria-expanded="false" aria-controls="mo-1">
+                    <span class="expand-btn__icon" aria-hidden="true"><svg class="icon"><use href="#i-plus"></use></svg></span>
+                    <span>Góc mở rộng</span>
+                    <span class="expand-btn__hint">Giai thoại Poincaré</span>
+                  </button>
+                  <div class="expand" id="mo-1" data-expand-panel inert aria-hidden="true">
+                    <div class="expand__inner">
+                      <p class="expand__label">Eureka trên xe buýt</p>
+                      <p>Tháng 6 năm 1880, Poincaré rời Caen đến Coutances. Vừa đặt chân lên bậc xe buýt, lời giải cho bài toán hàm Fuchsian bất chợt hiện ra — dù ông đã tạm gác toán học để đi nghỉ. Khoảnh khắc “Aha!” ấy không từ trên trời rơi xuống: nó được chuẩn bị bởi những ngày lao động căng thẳng trước đó. Đó chính là “ánh chớp” mà ông nói tới.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -415,53 +478,61 @@
 
           <!-- TRẠM 2 -->
           <article class="station" id="tram-2" data-station="2">
-            <header class="station__head">
-              <span class="station__num">02</span>
-              <div>
-                <p class="station__kicker">Luận điểm 2</p>
-                <h3 class="station__title">Phạm vi của năng lực sáng tạo</h3>
-              </div>
-            </header>
-
-            <div class="station__grid">
-              <div class="station__block">
-                <p class="label">Phá bỏ định kiến</p>
-                <p class="station__big">Sáng tạo <span class="ink-accent">KHÔNG</span><br>độc quyền cho giới “trí thức”.</p>
-                <p class="station__text">Trong nền kinh tế tri thức, <strong>mọi người đều tham gia và đều có năng lực sáng tạo</strong> — từ người trực tiếp sản xuất, kinh doanh đến nhà khoa học.</p>
-                <ul class="duo-list">
-                  <li><span>01</span><strong>Phát triển bản thân</strong><em>Mỗi người tự hoàn thiện năng lực riêng.</em></li>
-                  <li><span>02</span><strong>Động lực xã hội</strong><em>Thúc đẩy khoa học, kinh tế, văn hoá.</em></li>
-                </ul>
-              </div>
-
-              <div class="station__block station__block--paper">
-                <p class="label">10 chìa khoá CoachVille</p>
-                <ol class="keys">
-                  <li class="key key--lead"><span class="key__num">01</span>Tin mình là người sáng tạo</li>
-                  <li class="key"><span class="key__num">02</span>Mở rộng mối quan tâm</li>
-                  <li class="key"><span class="key__num">03</span>Thu thập rung cảm mới</li>
-                  <li class="key"><span class="key__num">04</span>Tìm liên hệ bất ngờ</li>
-                  <li class="key"><span class="key__num">05</span>Bỏ thói quen cũ</li>
-                  <li class="key"><span class="key__num">06</span>Môi trường thoải mái</li>
-                  <li class="key"><span class="key__num">07</span>“5 phút” ngẫu hứng</li>
-                  <li class="key"><span class="key__num">08</span>Kiên trì</li>
-                  <li class="key"><span class="key__num">09</span>Mở rộng trực giác</li>
-                  <li class="key"><span class="key__num">10</span>Trí tuệ nguyên lành &amp; đôi mắt tươi sáng</li>
-                </ol>
-                <p class="keys__note">Chìa khoá số 1: niềm tin mình là người sáng tạo.</p>
-              </div>
-            </div>
-
-            <div class="station__foot">
-              <button class="expand-btn" type="button" data-expand="mo-2" aria-expanded="false" aria-controls="mo-2">
-                <span class="expand-btn__icon" aria-hidden="true"><svg class="icon"><use href="#i-plus"></use></svg></span>
-                <span>Góc mở rộng</span>
-                <span class="expand-btn__hint">Quy tắc 20% của Google</span>
+            <h3 class="station__heading">
+              <button class="station__toggle" type="button" id="station-tab-2" data-accordion-toggle aria-expanded="false" aria-controls="station-panel-2">
+                <span class="station__num" aria-hidden="true">02</span>
+                <span class="station__label">
+                  <span class="station__kicker">Luận điểm 2</span>
+                  <span class="station__title">Phạm vi của năng lực sáng tạo</span>
+                </span>
+                <span class="station__teaser">Sáng tạo không phải đặc quyền của giới “trí thức”.</span>
+                <span class="station__icon" aria-hidden="true"><svg class="icon"><use href="#i-plus"></use></svg></span>
               </button>
-              <div class="expand" id="mo-2" data-expand-panel inert aria-hidden="true">
-                <div class="expand__inner">
-                  <p class="expand__label">20% thời gian tự do</p>
-                  <p>Google từng khuyến khích kỹ sư dành khoảng 20% thời gian làm việc cho một dự án mình thích. Gmail (2004) và Google News là những sản phẩm được sinh ra từ vùng tự do thử nghiệm ấy. Bài học không nằm ở con số 20%, mà ở chỗ: <strong>không gian để thử nghiệm là môi trường ươm mầm ý tưởng.</strong></p>
+            </h3>
+
+            <div class="station__panel" id="station-panel-2" role="region" aria-labelledby="station-tab-2" data-accordion-panel>
+              <div class="station__panel-inner">
+                <div class="station__grid">
+                  <div class="station__block">
+                    <p class="label">Phá bỏ định kiến</p>
+                    <p class="station__big">Sáng tạo <span class="ink-accent">KHÔNG</span><br>độc quyền cho giới “trí thức”.</p>
+                    <p class="station__text">Trong nền kinh tế tri thức, <strong>mọi người đều tham gia và đều có năng lực sáng tạo</strong> — từ người trực tiếp sản xuất, kinh doanh đến nhà khoa học.</p>
+                    <ul class="duo-list">
+                      <li><span>01</span><strong>Phát triển bản thân</strong><em>Mỗi người tự hoàn thiện năng lực riêng.</em></li>
+                      <li><span>02</span><strong>Động lực xã hội</strong><em>Thúc đẩy khoa học, kinh tế, văn hoá.</em></li>
+                    </ul>
+                  </div>
+
+                  <div class="station__block station__block--paper">
+                    <p class="label">10 chìa khoá CoachVille</p>
+                    <ol class="keys">
+                      <li class="key key--lead"><span class="key__num">01</span>Tin mình là người sáng tạo</li>
+                      <li class="key"><span class="key__num">02</span>Mở rộng mối quan tâm</li>
+                      <li class="key"><span class="key__num">03</span>Thu thập rung cảm mới</li>
+                      <li class="key"><span class="key__num">04</span>Tìm liên hệ bất ngờ</li>
+                      <li class="key"><span class="key__num">05</span>Bỏ thói quen cũ</li>
+                      <li class="key"><span class="key__num">06</span>Môi trường thoải mái</li>
+                      <li class="key"><span class="key__num">07</span>“5 phút” ngẫu hứng</li>
+                      <li class="key"><span class="key__num">08</span>Kiên trì</li>
+                      <li class="key"><span class="key__num">09</span>Mở rộng trực giác</li>
+                      <li class="key"><span class="key__num">10</span>Trí tuệ nguyên lành &amp; đôi mắt tươi sáng</li>
+                    </ol>
+                    <p class="keys__note">Chìa khoá số 1: niềm tin mình là người sáng tạo.</p>
+                  </div>
+                </div>
+
+                <div class="station__foot">
+                  <button class="expand-btn" type="button" data-expand="mo-2" aria-expanded="false" aria-controls="mo-2">
+                    <span class="expand-btn__icon" aria-hidden="true"><svg class="icon"><use href="#i-plus"></use></svg></span>
+                    <span>Góc mở rộng</span>
+                    <span class="expand-btn__hint">Quy tắc 20% của Google</span>
+                  </button>
+                  <div class="expand" id="mo-2" data-expand-panel inert aria-hidden="true">
+                    <div class="expand__inner">
+                      <p class="expand__label">20% thời gian tự do</p>
+                      <p>Google từng khuyến khích kỹ sư dành khoảng 20% thời gian làm việc cho một dự án mình thích. Gmail (2004) và Google News là những sản phẩm được sinh ra từ vùng tự do thử nghiệm ấy. Bài học không nằm ở con số 20%, mà ở chỗ: <strong>không gian để thử nghiệm là môi trường ươm mầm ý tưởng.</strong></p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -469,60 +540,69 @@
 
           <!-- TRẠM 3 -->
           <article class="station" id="tram-3" data-station="3">
-            <header class="station__head">
-              <span class="station__num">03</span>
-              <div>
-                <p class="station__kicker">Luận điểm 3</p>
-                <h3 class="station__title">Bản chất chung &amp; chiến lược quốc gia</h3>
-              </div>
-            </header>
+            <h3 class="station__heading">
+              <button class="station__toggle" type="button" id="station-tab-3" data-accordion-toggle aria-expanded="false" aria-controls="station-panel-3">
+                <span class="station__num" aria-hidden="true">03</span>
+                <span class="station__label">
+                  <span class="station__kicker">Luận điểm 3</span>
+                  <span class="station__title">Bản chất chung &amp; chiến lược quốc gia</span>
+                </span>
+                <span class="station__teaser">Sáng tạo là lao động — và là vấn đề sống còn.</span>
+                <span class="station__icon" aria-hidden="true"><svg class="icon"><use href="#i-plus"></use></svg></span>
+              </button>
+            </h3>
 
-            <div class="station__grid">
-              <div class="station__block">
-                <p class="label">Bản chất chung</p>
-                <p class="station__big">Tìm kiếm<br>những cái mới</p>
-                <ul class="triple-list">
-                  <li><span>Tri thức mới</span></li>
-                  <li><span>Cách vận dụng mới</span></li>
-                  <li><span>Giải pháp mới cho vấn đề cũ</span></li>
-                </ul>
-                <blockquote class="small-quote">
-                  <p>Giá trị nhân sinh: <em>“chút hạnh phúc thầm lặng của một sự thoả mãn tinh thần, một đời sống có ý nghĩa”</em>.</p>
-                </blockquote>
-              </div>
-
-              <div class="station__block station__block--paper">
-                <p class="label">Thực tại khốc liệt</p>
-                <div class="edison">
-                  <div class="edison__figure">
-                    <img src="images/edison.jpg" alt="Chân dung Thomas Edison" width="560" height="760">
-                  </div>
-                  <div class="edison__text">
-                    <div class="edison__numbers" aria-label="1 phần trăm cảm hứng và 99 phần trăm mồ hôi">
-                      <span class="edison__number">1<span>%</span><small>cảm hứng</small></span>
-                      <span class="edison__plus" aria-hidden="true">+</span>
-                      <span class="edison__number">99<span>%</span><small>mồ hôi</small></span>
-                    </div>
-                    <blockquote class="pullquote pullquote--tight">
-                      <p>“Trong mỗi phát minh có 1% cảm hứng và 99% việc đổ mồ hôi.”</p>
-                      <cite>Thomas Edison</cite>
+            <div class="station__panel" id="station-panel-3" role="region" aria-labelledby="station-tab-3" data-accordion-panel>
+              <div class="station__panel-inner">
+                <div class="station__grid">
+                  <div class="station__block">
+                    <p class="label">Bản chất chung</p>
+                    <p class="station__big">Tìm kiếm<br>những cái mới</p>
+                    <ul class="triple-list">
+                      <li><span>Tri thức mới</span></li>
+                      <li><span>Cách vận dụng mới</span></li>
+                      <li><span>Giải pháp mới cho vấn đề cũ</span></li>
+                    </ul>
+                    <blockquote class="small-quote">
+                      <p>Giá trị nhân sinh: <em>“chút hạnh phúc thầm lặng của một sự thoả mãn tinh thần, một đời sống có ý nghĩa”</em>.</p>
                     </blockquote>
                   </div>
-                </div>
-                <p class="station__text station__text--bordered">Sáng tạo là lao động phức tạp, vất vả — nhưng cũng là <strong>chìa khoá hội nhập</strong> và <strong>vấn đề chiến lược của mọi quốc gia</strong> trong nền kinh tế tri thức toàn cầu hoá.</p>
-              </div>
-            </div>
 
-            <div class="station__foot">
-              <button class="expand-btn" type="button" data-expand="mo-3" aria-expanded="false" aria-controls="mo-3">
-                <span class="expand-btn__icon" aria-hidden="true"><svg class="icon"><use href="#i-plus"></use></svg></span>
-                <span>Góc mở rộng</span>
-                <span class="expand-btn__hint">Innovate or Die</span>
-              </button>
-              <div class="expand" id="mo-3" data-expand-panel inert aria-hidden="true">
-                <div class="expand__inner">
-                  <p class="expand__label">Đổi mới hay là chết</p>
-                  <p>Kodak từng nắm trong tay công nghệ máy ảnh số nhưng ngần ngại đổi mới, để rồi nộp đơn phá sản năm 2012. Nokia dẫn đầu thị trường điện thoại di động một thời, rồi bán mảng điện thoại cho Microsoft năm 2014. Cuộc đua chip bán dẫn hôm nay là một ví dụ khác: <strong>đứng yên cũng là một cách tụt lại.</strong></p>
+                  <div class="station__block station__block--paper">
+                    <p class="label">Thực tại khốc liệt</p>
+                    <div class="edison">
+                      <figure class="edison__figure" data-figure style="--d: 80ms">
+                        <img src="images/edison.jpg" alt="Chân dung Thomas Edison" width="560" height="760">
+                        <figcaption>T. Edison · 1847 — 1931</figcaption>
+                      </figure>
+                      <div class="edison__text">
+                        <div class="edison__numbers" aria-label="1 phần trăm cảm hứng và 99 phần trăm mồ hôi">
+                          <span class="edison__number">1<span>%</span><small>cảm hứng</small></span>
+                          <span class="edison__plus" aria-hidden="true">+</span>
+                          <span class="edison__number">99<span>%</span><small>mồ hôi</small></span>
+                        </div>
+                        <blockquote class="pullquote pullquote--tight">
+                          <p>“Trong mỗi phát minh có 1% cảm hứng và 99% việc đổ mồ hôi.”</p>
+                          <cite>Thomas Edison</cite>
+                        </blockquote>
+                      </div>
+                    </div>
+                    <p class="station__text station__text--bordered">Sáng tạo là lao động phức tạp, vất vả — nhưng cũng là <strong>chìa khoá hội nhập</strong> và <strong>vấn đề chiến lược của mọi quốc gia</strong> trong nền kinh tế tri thức toàn cầu hoá.</p>
+                  </div>
+                </div>
+
+                <div class="station__foot">
+                  <button class="expand-btn" type="button" data-expand="mo-3" aria-expanded="false" aria-controls="mo-3">
+                    <span class="expand-btn__icon" aria-hidden="true"><svg class="icon"><use href="#i-plus"></use></svg></span>
+                    <span>Góc mở rộng</span>
+                    <span class="expand-btn__hint">Innovate or Die</span>
+                  </button>
+                  <div class="expand" id="mo-3" data-expand-panel inert aria-hidden="true">
+                    <div class="expand__inner">
+                      <p class="expand__label">Đổi mới hay là chết</p>
+                      <p>Kodak từng nắm trong tay công nghệ máy ảnh số nhưng ngần ngại đổi mới, để rồi nộp đơn phá sản năm 2012. Nokia dẫn đầu thị trường điện thoại di động một thời, rồi bán mảng điện thoại cho Microsoft năm 2014. Cuộc đua chip bán dẫn hôm nay là một ví dụ khác: <strong>đứng yên cũng là một cách tụt lại.</strong></p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -530,64 +610,72 @@
 
           <!-- TRẠM 4 -->
           <article class="station" id="tram-4" data-station="4">
-            <header class="station__head">
-              <span class="station__num">04</span>
-              <div>
-                <p class="station__kicker">Luận điểm 4</p>
-                <h3 class="station__title">Đặc quyền con người &amp; sự “cộng năng”</h3>
-              </div>
-            </header>
-
-            <div class="station__grid">
-              <div class="station__block">
-                <p class="label">Khẳng định</p>
-                <p class="station__big">Sáng tạo vẫn là<br>năng lực riêng có<br>của con người.</p>
-                <p class="station__text">Sáng tạo thường là việc riêng của từng bộ óc. Nhưng sự tiếp xúc, cọ xát giữa các bộ óc làm <strong>“ý tưởng nảy sinh ý tưởng”</strong> — nên sáng tạo cũng là kết quả của tập thể.</p>
-                <div class="figure-pair figure-pair--single">
-                  <figure class="mini-figure mini-figure--wide">
-                    <img src="images/picasso.jpg" alt="Chân dung Pablo Picasso" width="520" height="700">
-                    <figcaption>P. Picasso</figcaption>
-                  </figure>
-                </div>
-              </div>
-
-              <div class="station__block station__block--paper">
-                <p class="label">Công thức thời đại mới</p>
-                <p class="formula formula--stacked" aria-label="Năng lực sáng tạo dân tộc bằng công nghệ thông tin hiện đại cộng với trí tuệ sáng tạo con người, gọi là sự cộng năng">
-                  <span class="formula__term">Năng lực sáng tạo dân tộc</span>
-                  <span class="formula__op">=</span>
-                  <span class="formula__term">Công nghệ thông tin hiện đại</span>
-                  <span class="formula__op formula__op--plus">⊕</span>
-                  <span class="formula__term">Trí tuệ sáng tạo con người</span>
-                </p>
-                <p class="formula__source">Sự “cộng năng” — sức mạnh của công nghệ tri thức hiện đại và trí tuệ riêng có của con người.</p>
-
-                <blockquote class="pullquote pullquote--picasso">
-                  <p>“Máy tính chỉ biết đưa ra câu trả lời.”</p>
-                  <cite>Pablo Picasso</cite>
-                </blockquote>
-                <p class="station__text station__text--bordered">Con người làm chủ cảm xúc, trực giác và những câu hỏi mới. Công nghệ khuếch đại trí tuệ — nhưng con người vẫn là chủ thể.</p>
-              </div>
-            </div>
-
-            <div class="station__foot">
-              <button class="expand-btn" type="button" data-expand="mo-4" aria-expanded="false" aria-controls="mo-4">
-                <span class="expand-btn__icon" aria-hidden="true"><svg class="icon"><use href="#i-plus"></use></svg></span>
-                <span>Góc mở rộng</span>
-                <span class="expand-btn__hint">Máy tính trả lời, con người đặt câu hỏi</span>
+            <h3 class="station__heading">
+              <button class="station__toggle" type="button" id="station-tab-4" data-accordion-toggle aria-expanded="false" aria-controls="station-panel-4">
+                <span class="station__num" aria-hidden="true">04</span>
+                <span class="station__label">
+                  <span class="station__kicker">Luận điểm 4</span>
+                  <span class="station__title">Đặc quyền con người &amp; sự “cộng năng”</span>
+                </span>
+                <span class="station__teaser">Công nghệ khuếch đại trí tuệ — con người giữ vai trò chủ thể.</span>
+                <span class="station__icon" aria-hidden="true"><svg class="icon"><use href="#i-plus"></use></svg></span>
               </button>
-              <div class="expand" id="mo-4" data-expand-panel inert aria-hidden="true">
-                <div class="expand__inner">
-                  <p class="expand__label">Câu hỏi mới</p>
-                  <p>Câu nói thường được gán cho Picasso nhắc ta rằng AI có thể tối ưu câu trả lời, nhưng việc chọn câu hỏi đáng hỏi, đặt nó trong một khung cảm xúc và trách nhiệm — vẫn là phần việc của con người. Đó là “sự cộng năng”: công nghệ khuếch đại trí tuệ, con người giữ vai trò chủ thể.</p>
+            </h3>
+
+            <div class="station__panel" id="station-panel-4" role="region" aria-labelledby="station-tab-4" data-accordion-panel>
+              <div class="station__panel-inner">
+                <div class="station__grid">
+                  <div class="station__block">
+                    <p class="label">Khẳng định</p>
+                    <p class="station__big">Sáng tạo vẫn là<br>năng lực riêng có<br>của con người.</p>
+                    <p class="station__text">Sáng tạo thường là việc riêng của từng bộ óc. Nhưng sự tiếp xúc, cọ xát giữa các bộ óc làm <strong>“ý tưởng nảy sinh ý tưởng”</strong> — nên sáng tạo cũng là kết quả của tập thể.</p>
+                    <div class="figure-pair figure-pair--single">
+                      <figure class="mini-figure" data-figure style="--d: 80ms">
+                        <img src="images/picasso.jpg" alt="Chân dung Pablo Picasso" width="520" height="700">
+                        <figcaption><span>P. Picasso</span><small>1881 — 1973</small></figcaption>
+                      </figure>
+                    </div>
+                  </div>
+
+                  <div class="station__block station__block--paper">
+                    <p class="label">Công thức thời đại mới</p>
+                    <p class="sr-only">Năng lực sáng tạo dân tộc bằng công nghệ thông tin hiện đại cộng với trí tuệ sáng tạo con người, gọi là sự cộng năng.</p>
+                    <p class="formula formula--stacked" aria-hidden="true">
+                      <span class="formula__term">Năng lực sáng tạo dân tộc</span>
+                      <span class="formula__op">=</span>
+                      <span class="formula__term">Công nghệ thông tin hiện đại</span>
+                      <span class="formula__op formula__op--plus">⊕</span>
+                      <span class="formula__term">Trí tuệ sáng tạo con người</span>
+                    </p>
+                    <p class="formula__source">Sự “cộng năng” — sức mạnh của công nghệ tri thức hiện đại và trí tuệ riêng có của con người.</p>
+
+                    <blockquote class="pullquote pullquote--picasso">
+                      <p>“Máy tính chỉ biết đưa ra câu trả lời.”</p>
+                      <cite>Pablo Picasso</cite>
+                    </blockquote>
+                    <p class="station__text station__text--bordered">Con người làm chủ cảm xúc, trực giác và những câu hỏi mới. Công nghệ khuếch đại trí tuệ — nhưng con người vẫn là chủ thể.</p>
+                  </div>
+                </div>
+
+                <div class="station__foot">
+                  <button class="expand-btn" type="button" data-expand="mo-4" aria-expanded="false" aria-controls="mo-4">
+                    <span class="expand-btn__icon" aria-hidden="true"><svg class="icon"><use href="#i-plus"></use></svg></span>
+                    <span>Góc mở rộng</span>
+                    <span class="expand-btn__hint">Máy tính trả lời, con người đặt câu hỏi</span>
+                  </button>
+                  <div class="expand" id="mo-4" data-expand-panel inert aria-hidden="true">
+                    <div class="expand__inner">
+                      <p class="expand__label">Câu hỏi mới</p>
+                      <p>Câu nói thường được gán cho Picasso nhắc ta rằng AI có thể tối ưu câu trả lời, nhưng việc chọn câu hỏi đáng hỏi, đặt nó trong một khung cảm xúc và trách nhiệm — vẫn là phần việc của con người. Đó là “sự cộng năng”: công nghệ khuếch đại trí tuệ, con người giữ vai trò chủ thể.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </article>
         </div>
-        </div>
 
-        <div class="relation" data-reveal aria-label="Mối quan hệ giữa các luận điểm">
+        <div class="relation" role="group" data-reveal aria-label="Mối quan hệ giữa các luận điểm">
           <div class="relation__step">
             <span class="relation__num">LĐ 1 &amp; 2</span>
             <p>Làm rõ khái niệm, vai trò, phạm vi</p>
@@ -704,14 +792,17 @@
     <!-- ============================== III. GIÁ TRỊ ============================== -->
     <section id="gia-tri" class="section section--values" data-section>
       <div class="container">
-        <header class="section-head section-head--center" data-reveal>
-          <p class="eyebrow"><span class="eyebrow__num">II.4 &amp; III</span> Mục đích, chủ đề &amp; giá trị</p>
-          <h2 class="section-title">Ba tầng giá trị<br><em>của một văn bản</em></h2>
-          <p class="section-lede">Mục đích — chủ đề — phong cách: ba lớp nghĩa hoà vào nhau trong cùng một lập luận.</p>
+        <header class="section-head section-head--split" data-reveal>
+          <p class="section-head__index" aria-hidden="true">III</p>
+          <div class="section-head__text">
+            <p class="eyebrow"><span class="eyebrow__num">II.4 &amp; III</span> Mục đích, chủ đề &amp; giá trị</p>
+            <h2 class="section-title">Ba tầng giá trị<br><em>của một văn bản</em></h2>
+            <p class="section-lede">Mục đích — chủ đề — phong cách: ba lớp nghĩa hoà vào nhau trong cùng một lập luận.</p>
+          </div>
         </header>
 
         <div class="bento" data-reveal>
-          <article class="bento__card">
+          <article class="bento__card" data-glow>
             <div class="bento__top">
               <span class="bento__index">01</span>
               <span class="bento__icon" aria-hidden="true"><svg class="icon"><use href="#i-eye"></use></svg></span>
@@ -730,7 +821,7 @@
             </div>
           </article>
 
-          <article class="bento__card bento__card--dark">
+          <article class="bento__card bento__card--dark" data-glow>
             <div class="bento__top">
               <span class="bento__index">02</span>
               <span class="bento__icon" aria-hidden="true"><svg class="icon"><use href="#i-network"></use></svg></span>
@@ -747,7 +838,7 @@
             <p class="bento__footnote">Hòa hợp hữu cơ trong cùng một nhiệm vụ: nâng cao năng lực sáng tạo chung.</p>
           </article>
 
-          <article class="bento__card">
+          <article class="bento__card" data-glow>
             <div class="bento__top">
               <span class="bento__index">03</span>
               <span class="bento__icon" aria-hidden="true"><svg class="icon"><use href="#i-spark"></use></svg></span>
@@ -819,7 +910,7 @@
       </div>
 
       <p class="footer__statement">
-        <span>Tạo dựng <span class="nowrap">năng lực</span> <span class="nowrap">sáng tạo</span> <span class="nowrap">hùng hậu —</span></span>
+        <span class="footer__statement-line">Tạo dựng năng lực sáng tạo hùng hậu —</span>
         <em>tiến kịp và tiến cùng thế giới.</em>
       </p>
 
@@ -873,18 +964,28 @@
         <p>Apple — Think Different (1997). Video dùng cho mục đích học tập.</p>
         <p class="video-dialog__duration"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>1:09</p>
       </div>
+
+      <details class="video-dialog__transcript">
+        <summary>Lời bình trong video</summary>
+        <p><strong>Tóm tắt tiếng Việt:</strong> “Think Different” ca ngợi những người dám nghĩ khác: kẻ lập dị, người nổi loạn, kẻ gây rối, những mảnh ghép tròn trong lỗ vuông. Họ không ưa luật lệ và không tôn trọng hiện trạng. Người ta có thể trích dẫn, phản đối, tôn vinh hay chê bai họ — nhưng không thể phớt lờ, vì họ thay đổi thế giới và đẩy loài người tiến lên. Những người đủ “điên” để nghĩ mình có thể thay đổi thế giới chính là những người làm được điều đó.</p>
+        <p lang="en"><strong>Original narration:</strong> Here’s to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. The ones who see things differently. They’re not fond of rules, and they have no respect for the status quo. You can quote them, disagree with them, glorify or vilify them. About the only thing you can’t do is ignore them. Because they change things. They push the human race forward. And while some may see them as the crazy ones, we see genius. Because the people who are crazy enough to think they can change the world are the ones who do.</p>
+      </details>
     </div>
   </dialog>
 
   <script defer src="js/utils.js"></script>
+  <script defer src="js/cursor.js"></script>
   <script defer src="js/nav.js"></script>
   <script defer src="js/reveal.js"></script>
+  <script defer src="js/hero.js"></script>
   <script defer src="js/flashcards.js"></script>
   <script defer src="js/video.js"></script>
   <script defer src="js/tabs.js"></script>
   <script defer src="js/timeline.js"></script>
   <script defer src="js/expand.js"></script>
-  <script defer src="js/stepper.js"></script>
+  <script defer src="js/accordion.js"></script>
+  <script defer src="js/portrait.js"></script>
+  <script defer src="js/glow.js"></script>
   <script defer src="js/app.js"></script>
 </body>
 </html>

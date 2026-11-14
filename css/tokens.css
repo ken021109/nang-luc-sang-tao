@@ -1,36 +1,43 @@
 /* ==========================================================================
-   Design tokens — một hệ thống tối giản, lấy cảm hứng từ Apple
+   Design tokens — gallery dark, warm ember accent, editorial scale
    ========================================================================== */
 
 :root {
+  color-scheme: dark;
+
   /* Surfaces */
-  --paper: #fbfbfa;
-  --paper-2: #f4f3ef;
-  --paper-3: #ecebe5;
-  --surface: #ffffff;
-  --surface-warm: #fff8f1;
+  --bg: #09090a;
+  --bg-2: #0d0d0f;
+  --bg-3: #121214;
+  --surface: #131315;
+  --surface-2: #17171a;
+  --surface-3: #1d1d21;
+  --surface-warm: #1b1210;
 
   /* Ink */
-  --ink: #171717;
-  --ink-soft: #343436;
-  --muted: #5f5f64;
-  --muted-2: #68686d;
-  --line: rgba(23, 23, 23, 0.1);
-  --line-strong: rgba(23, 23, 23, 0.16);
+  --ink: #f4f1ea;
+  --ink-soft: #ddd8ce;
+  --muted: #a8a299;
+  --muted-2: #8b857c;
+  --line: rgba(244, 241, 234, 0.12);
+  --line-strong: rgba(244, 241, 234, 0.22);
 
   /* Accent — tia lửa */
-  --accent: #ff5a1f;
-  --accent-ink: #b83c12;
-  --accent-soft: #fff0e8;
-  --accent-line: rgba(255, 90, 31, 0.28);
+  --accent: #ff6a2e;
+  --accent-ink: #ffa176;
+  --accent-soft: rgba(255, 106, 46, 0.12);
+  --accent-line: rgba(255, 106, 46, 0.36);
 
-  /* Dark */
-  --dark: #0b0b0c;
-  --dark-2: #131315;
+  /* Legacy aliases kept for components that still reference them */
+  --paper: var(--bg);
+  --paper-2: var(--bg-2);
+  --paper-3: var(--bg-3);
+  --dark: #09090a;
+  --dark-2: #0d0d0f;
   --dark-3: #1c1c1f;
-  --dark-text: #f5f5f7;
-  --dark-muted: #a1a1a6;
-  --dark-line: rgba(255, 255, 255, 0.12);
+  --dark-text: var(--ink);
+  --dark-muted: var(--muted);
+  --dark-line: var(--line);
 
   /* Radii */
   --r-xs: 8px;
@@ -40,28 +47,36 @@
   --r-xl: 36px;
   --r-pill: 999px;
 
-  /* Elevation — bóng mềm, nhiều lớp như vật liệu */
-  --shadow-xs: 0 1px 2px rgba(23, 23, 23, 0.04);
-  --shadow-sm: 0 1px 2px rgba(23, 23, 23, 0.04), 0 8px 24px rgba(23, 23, 23, 0.045);
-  --shadow-md: 0 2px 4px rgba(23, 23, 23, 0.04), 0 18px 48px rgba(23, 23, 23, 0.075);
-  --shadow-lg: 0 4px 8px rgba(23, 23, 23, 0.05), 0 32px 80px rgba(23, 23, 23, 0.12);
+  /* Elevation */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.28), 0 12px 32px rgba(0, 0, 0, 0.24);
+  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.3), 0 24px 60px rgba(0, 0, 0, 0.34);
+  --shadow-lg: 0 4px 10px rgba(0, 0, 0, 0.35), 0 40px 100px rgba(0, 0, 0, 0.45);
 
   /* Type */
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
   --font-serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "DejaVu Sans Mono", monospace;
 
-  /* Motion — spring-ish curves, không bounce cho UI tĩnh */
+  /* Motion */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-soft: cubic-bezier(0.32, 0.72, 0, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --dur-fast: 180ms;
   --dur: 320ms;
-  --dur-slow: 620ms;
+  --dur-slow: 680ms;
 
   /* Layout */
-  --container: 1200px;
-  --gutter: clamp(1.25rem, 4vw, 3rem);
-  --nav-offset: 96px;
-  --section-space: clamp(5rem, 9vw, 8.5rem);
+  --container: 1920px;
+  --gutter: clamp(1.15rem, 3.4vw, 4rem);
+  --nav-offset: 104px;
+  --section-space: clamp(5.5rem, 10vw, 9.5rem);
+}
+
+@media (max-width: 720px) {
+  :root {
+    --gutter: 1.15rem;
+    --nav-offset: 86px;
+    --section-space: clamp(4.25rem, 13vw, 6rem);
+  }
 }
