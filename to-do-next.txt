@@ -1,0 +1,30 @@
+Dưới đây là danh sách feedback được tổng hợp và phân chia theo từng hạng mục rõ ràng, sử dụng một số thuật ngữ thiết kế/web để bạn của bạn dễ dàng hình dung và chỉnh sửa nhất:
+
+1. Ngôn ngữ Thiết kế & Màu sắc (Theme & Vibe)
+
+Lấy theme ở phần cuối trang web (vận dụng và về cuối) để áp dụng làm tone màu chủ đạo cho toàn bộ site. Phần đầu hiện tại màu trắng nhìn hơi đơn điệu và thiếu tính nghệ thuật.
+
+2. Bố cục không gian (Layout)
+
+Thiết kế tràn viền (Full-width Layout): Hiện tại hai bên lề màn hình đang bị trống quá nhiều. Cần kéo giãn bố cục để các ô nội dung, text và mảng trang trí tràn ra sát hai bên mép màn hình hơn, giúp tổng thể hoành tráng và tối ưu không gian.
+
+3. Phần Mở đầu (Hero Section & Video)
+
+Video background tràn viền: Thay vì để một nút bấm xem video độc lập, hãy tích hợp video khởi động làm hình nền tràn toàn bộ màn hình ở ngay khung đầu tiên (Hero section).
+
+Blend màu mượt mà: Xử lý đồ họa để video hòa quyện mượt mà vào thiết kế của trang web, tránh cảm giác bị chèn vào một cách rời rạc hay "hổ lốn".
+
+4. Trình bày Nội dung & Hiển thị Nhân vật (Content & Cards)
+
+Nội dung dạng Accordion (Đóng/Mở): Đừng hiển thị toàn bộ text cùng một lúc. Hãy thiết kế thành các ô/mục lục, khi click vào ô nào thì nội dung ô đó mới mở rộng ra, đồng thời tự động đóng các ô đang mở trước đó lại.
+
+Tăng kích thước và hiệu ứng xuất hiện của Nhân vật: Ảnh các nhân vật hiện tại đang hơi nhỏ. Cần làm ảnh to hơn nhưng ban đầu sẽ ẩn đi, chỉ khi người dùng click vào nội dung hoặc di chuột (hover) tới thì hình ảnh nhân vật mới pop-up/hiện ra.
+
+5. Hiệu ứng & Tương tác (Interactions)
+
+Hiệu ứng trỏ chuột (Mouse trail/Glare effect): Thêm hiệu ứng vệt sáng (glare) chạy theo sau con trỏ chuột khi lướt trên web để tạo điểm nhấn thị giác thú vị.
+
+Tăng trải nghiệm tương tác (Micro-interactions): Bổ sung thêm các hiệu ứng mượt mà khi cuộn trang (scroll animations), khi di chuột (hover) và khi click vào các nút bấm.
+
+6. Fix lỗi hiển thị Chữ (Typography)
+Sửa lỗi dính chữ (Line-height/Tracking): Ở phần cuối trang (chỗ đoạn text "tạo dựng năng lực sáng tạo hùng hậu... tiến kịp và tiến cùng thế giới"), khoảng cách giữa các chữ và các dòng đang không đều khiến chữ bị lồng và dính vào nhau. Cần fix lại khoảng cách để văn bản thoáng và dễ đọc.
